@@ -1,0 +1,15 @@
+<ng-container *ngFor="let item of repo.value" class="repoItem">
+  <img style="padding: 5px; cursor: pointer" [src]="item.base" #img (click)="selectAsset(item.base)" alt="">
+</ng-container>
+
+<hr>
+<image-cropper
+    [imageBase64]="imageBase64"
+    [resizeToWidth]="0"
+    format='png'
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper>
+
+<img [src]="croppedImage" />
