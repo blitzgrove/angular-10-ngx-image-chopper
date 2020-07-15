@@ -57,8 +57,8 @@ export class AppComponent {
     this.imageBase64 = base;
   }
 
-  imageCropped(image: string) {
-    this.croppedImage = image;
+  imageCropped(image: any) {
+    this.croppedImage = image.base64;
   }
 
   imageLoaded() {
